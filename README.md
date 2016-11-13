@@ -3,4 +3,5 @@ This client demonstrates the real-time mood analysis of the driver and plots the
 
 To run, use the command
     
+    > npm install
     > npm start
