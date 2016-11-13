@@ -17,9 +17,10 @@
 </body>
 
 <script>
-    socket.emit('subscribe', 'testStream');
-    socket.on('testEmit', function(msg){
-        console.log("tester");
+    socket.emit('subscribe', 'testroom');
+    socket.on('newPacket', function(packet){
+        console.log("New packet received: ");
+        console.log(packet);
     });
 </script>
 

@@ -41,7 +41,8 @@ router.post('/', function (req, res, next) {
   data.time = new Date();
 
   // Emit to all listeners in the room 
-  io.to('testStream').emit('testEmit', "lol");
+  room = data.userId+data.tripId;
+  req.app.io.to(room).emit('newPacket', data);
 
   // console.log(data);
   
