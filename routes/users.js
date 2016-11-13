@@ -7,7 +7,7 @@ var tableService = azure.createTableService("croozdata", "NjwMoGKltY9rgfVhks/BdN
 tableService.createTableIfNotExists('users', function(error, result, response) {
   if (!error) {
     // result contains true if created; false if already exists
-    console.error("User table already exists");
+    console.error("Router: user table already exists");
   }
 });
 

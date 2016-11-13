@@ -17,10 +17,27 @@
 </body>
 
 <script>
-    socket.emit('subscribe', 'testroom');
+    
+    // Event when a new data packet is sent to the client
     socket.on('newPacket', function(packet){
         console.log("New packet received: ");
         console.log(packet);
+    });
+
+    // Same but array of packets, generally called when app loads
+    socket.on('newPackets', function(packets){
+        console.log("New packets received: ");
+        console.log(packets);
+    });
+
+    // Event when client is connected to server
+    socket.on('connected', function(users){
+        console.log("Connected to server with payload: ");
+        console.log(users);
+        
+        // Subscribe to first user and current trip
+        socket.emit('subscribe', users[0]);
+
     });
 </script>
 
