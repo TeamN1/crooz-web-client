@@ -40,6 +40,9 @@ router.post('/', function (req, res, next) {
 
   data.time = new Date();
 
+  // Emit to all listeners in the room 
+  io.to('testStream').emit('testEmit', "lol");
+
   // console.log(data);
   
   res.sendStatus(200);

@@ -16,4 +16,11 @@
     <p>Put the client files here. Feel free to rename the folders.</p>
 </body>
 
+<script>
+    socket.emit('subscribe', 'testStream');
+    socket.on('testEmit', function(msg){
+        console.log("tester");
+    });
+</script>
+
 </html>
