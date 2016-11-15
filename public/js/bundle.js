@@ -5,7 +5,7 @@ var Mapper = (function () {
         if (packetList === void 0) { packetList = []; }
         this.map = new Microsoft.Maps.Map(element, {
             credentials: 'AuknkZ3WFkby8tWsY03iI9muVj4jcRdHztYdxJiOdu6PXPrX7Tm2ziXOsfz3wAPY',
-            navigationBarMode: navigationBarMode.compact
+            center: new Microsoft.Maps.Location(51.50632, -0.12714)
         });
         this.packets = packetList;
     }
@@ -73,9 +73,11 @@ var socket = io();
 var mapper = new Mapper_1.default(document.getElementById('mapCard'));
 socket.on('connected', function (users) {
     socket.emit('subscribe', users[0]);
+    console.log("connected");
 });
-socket.on('newPackets', function (packets) {
-    mapper.packets = packets;
+socket.on('newPacket', function (packet) {
+    console.log("got a new Packet");
+    mapper.packets = [packet];
     mapper.render();
     var car = mapper.car;
     document.getElementById('songCard').innerText = car.song;
