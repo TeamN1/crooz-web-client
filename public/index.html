@@ -1,44 +1,109 @@
+<!--
+ * CoreUI - Open Source Bootstrap Admin Template
+ * @version v1.0.0-alpha.2
+ * @link http://coreui.io
+ * Copyright (c) 2016 creativeLabs Łukasz Holeczek
+ * @license MIT
+ -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Express</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/javascripts/socket.io.js"></script>
-    <script>
-        var socket = io();
-    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="crooz.io - play tunes based on your mood">
+    <meta name="author" content="Brian Mbuba, Edwin Tsang, Ming Cheuk, Riya Baby">
+    <meta name="keyword" content="DevDay,mood,tunes,music,Dashboard">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>crooz - your personal DJ</title>
+    <link href="./css/load.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/simple-line-icons.css" rel="stylesheet">
+    <link href="./css/coreui.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <h1>Express</h1>
-    <p>Welcome to Express</p>
-    <p>Put the client files here. Feel free to rename the folders.</p>
+<body class="navbar-fixed fixed-nav">
+    <header class="navbar text-center">
+        <div class="container-fluid"> 
+            <a class="navbar-brand" href="#"></a>
+        </div>
+    </header>
+
+    <!--<div class="sidebar">
+
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="icon-speedometer"></i> Dashboard <span class="tag tag-info">NEW</span></a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>-->
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-inverse card-primary">
+                        <div class="card-block p-b-0">
+                            <h2 class="m-b-0 card-title">mood</h2>
+                            <div id="moodCard">
+                                <i class="fa fa-smile-o fa-5x" aria-hidden="true"></i>                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div class="card card-inverse card-primary">
+                        <div class="card-block p-b-0">
+                            <h2 class="m-b-0 card-title">current song</h1> <br/>
+                            <h1 id="songCard">Happy - Pharrell Williams</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="card card-default">
+                        <div class="card-block p-b-0">
+                            <h2 class="m-b-0 card-title">location</h2>
+                            <div id="mapCard">                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+
+
+    <footer class="footer">
+        <span class="text-left">
+            <a href="http://coreui.io">CoreUI</a> © 2016 creativeLabs.
+        </span>
+        <span class="float-xs-right">
+            Powered by <a href="http://coreui.io">CoreUI</a>
+        </span>
+    </footer>
+
+    <!-- Bootstrap and necessary plugins -->
+    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script src='http://www.bing.com/api/maps/mapcontrol'></script>
+    <script src="./js/pace.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="./js/bundle.js"></script>
+
 </body>
-
-<script>
-    
-    // Event when a new data packet is sent to the client
-    socket.on('newPacket', function(packet){
-        console.log("New packet received: ");
-        console.log(packet);
-    });
-
-    // Same but array of packets, generally called when app loads
-    socket.on('newPackets', function(packets){
-        console.log("New packets received: ");
-        console.log(packets);
-    });
-
-    // Event when client is connected to server
-    socket.on('connected', function(users){
-        console.log("Connected to server with payload: ");
-        console.log(users);
-        
-        // Subscribe to first user and current trip
-        socket.emit('subscribe', users[0]);
-
-    });
-</script>
 
 </html>
