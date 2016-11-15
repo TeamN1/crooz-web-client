@@ -8,7 +8,9 @@ function main() {
         socket.emit('subscribe', users[0]);
     });
     socket.on('newPacket', function (packet) {
+        console.log(packet);
         mapper.addPackets([packet]);
+        console.log(mapper._packets);
         mapper.render();
         var car = mapper.car;
         document.getElementById('songCard').innerText = car.song;
