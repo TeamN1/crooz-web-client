@@ -19,17 +19,18 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>crooz - your personal DJ</title>
-    <link href="./css/load.css" rel="stylesheet">
+    <!--<link href="./css/load.css" rel="stylesheet">-->
     <link href="./css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/simple-line-icons.css" rel="stylesheet">
     <link href="./css/coreui.css" rel="stylesheet">
+    <link href="./css/flexbox.css" rel="stylesheet">
 
 </head>
 
 <body class="navbar-fixed fixed-nav">
     <header class="navbar text-center">
         <div class="container-fluid"> 
-            <a class="navbar-brand" href="#"></a>
+            <!--<a class="navbar-brand" href="#"></a>-->
         </div>
     </header>
 
@@ -69,12 +70,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-6 col-lg-6">
                     <div class="card card-default">
                         <div class="card-block p-b-0">
                             <h2 class="m-b-0 card-title">location</h2>
-                            <div id="mapCard">                   
-                            </div>
+                            <div id="mapCard" class="Flexible-container"></div>
                         </div>
                     </div>
                 </div>
@@ -99,10 +99,11 @@
     <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-    <script src='//www.bing.com/api/maps/mapcontrol'></script>
-    <script src="./js/pace.min.js"></script>
+    <script src='//www.bing.com/api/maps/mapcontrol?branch=release&callback=main'></script>
+    <!--<script src="./js/pace.min.js"></script>-->
     <script src="//cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script src="./js/bundle.js"></script>
+    <script src="./js/mapper.js"></script>
+    <script src="./js/crooz.js"></script>
 
 </body>
 
