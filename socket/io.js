@@ -50,9 +50,8 @@ function dumpPackets(io, socketId, userId, tripId) {
     var packets = [];
 
     var query = new azure.TableQuery()
-        .top(10)
         .where('PartitionKey eq ?', userId)
-        .and('RowKey eq ?', tripId);
+        .and('tripId eq ?', tripId);
 
     tableService.queryEntities('data',query, null, function(error, result, response) {
         if(!error) {
@@ -62,7 +61,7 @@ function dumpPackets(io, socketId, userId, tripId) {
                 // console.log(result.entries[i]);
                 packets[i] = {
                     userId: result.entries[i].PartitionKey._,
-                    tripId: result.entries[i].RowKey._,
+                    tripId: result.entries[i].tripId._,
                     geo: {
                         lat: result.entries[i].latitude._,
                         lon: result.entries[i].longitude._
@@ -70,7 +69,7 @@ function dumpPackets(io, socketId, userId, tripId) {
                     mood: JSON.parse(result.entries[i].mood._),
                     song: result.entries[i].song._,
                     speed: result.entries[i].speed._,
-                    time: result.entries[i].Timestamp._
+                    time: result.entries[i].time._
                 }
                 
             }
