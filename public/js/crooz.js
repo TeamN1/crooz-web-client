@@ -1,7 +1,9 @@
 "use strict";
+var socket;
+var mapper;
 function main() {
-    var socket = io();
-    var mapper = Mapper.init(document.getElementById('mapCard'));
+    socket = io();
+    mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
         socket.emit('subscribe', users[0]);
     });
