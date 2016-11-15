@@ -23,6 +23,7 @@ Mapper.render = function() {
             this.map.entities.removeAt(i);
         }
     }
+    console.log(this.car);
     var pushPin = new Microsoft.Maps.Pushpin(
         new Microsoft.Maps.Location(this.car.geo.lat, this.car.geo.lon),
         null
@@ -32,6 +33,7 @@ Mapper.render = function() {
 
 Mapper.addPackets = function(packetList) {
     if (packetList) {
+        console.log(packetList);
         this._packets.concat(packetList);
         this.car = this._packets[this._packets.length-1];
     }
