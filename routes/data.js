@@ -30,7 +30,8 @@ router.post('/', function (req, res, next) {
     longitude: entGen.Double(data.geo.lon), // Longitude
     speed: entGen.Double(data.speed),
     mood: entGen.String(JSON.stringify(data.mood)), // Current mood
-    song: entGen.String(data.song) // Current song
+    song: entGen.String(data.song), // Current song
+    time: entGen.DateTime(data.time) // Timestamp from client
   };
 
   tableService.insertEntity('data', task, function(error, result, response) {
