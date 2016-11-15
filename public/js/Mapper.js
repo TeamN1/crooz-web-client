@@ -16,6 +16,7 @@ Mapper.init = function(element, packetList) {
 }
 
 Mapper.render = function() {
+    console.log(this._packets);
     this.drawPolyline(this._packets)
     for (var i = this.map.entities.getLength()-1; i >=0; i--) {
         var previousPin = this.map.entities.get(i);
