@@ -24,7 +24,8 @@ router.post('/', function (req, res, next) {
   var entGen = azure.TableUtilities.entityGenerator;
   var task = {
     PartitionKey: entGen.String(data.userId), // User ID
-    RowKey: entGen.String(data.tripId), // Session ID
+    RowKey: (new Date()).toISOString(), // RowKey from datetime
+    tripId: entGen.String(data.tripId), // Session ID
     latitude: entGen.Double(data.geo.lat), // Latitude
     longitude: entGen.Double(data.geo.lon), // Longitude
     speed: entGen.Double(data.speed),
