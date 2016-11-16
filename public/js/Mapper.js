@@ -9,7 +9,7 @@ Mapper.init = function(element, packetList) {
     if (packetList === void 0) { packetList = []; }
     this.map = new Microsoft.Maps.Map(element, {
         credentials: 'AuknkZ3WFkby8tWsY03iI9muVj4jcRdHztYdxJiOdu6PXPrX7Tm2ziXOsfz3wAPY',
-        //navigationBarMode: navigationBarMode.compact
+        navigationBarMode: Microsoft.Maps.NavigationBarMode;
     });
     this.addPackets(packetList);
     return this;
