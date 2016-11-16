@@ -33,7 +33,7 @@ Mapper.render = function() {
 }
 
 Mapper.addPackets = function(packetList) {
-    if (packetList) {
+    if (packetList.length) {
         console.log(packetList);
         this._packets = this._packets.concat(packetList);
         this.car = this._packets[this._packets.length-1];
