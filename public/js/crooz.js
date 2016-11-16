@@ -5,7 +5,9 @@ function main() {
     socket = io();
     mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
-        socket.emit('subscribe', users[0]);
+        socket.emit('subscribe', users.sort(function(a,b) { 
+ -          return new Date(b.lastActive).getTime() - new Date(a.lastActive).getTime() 
+ -      }[0]));
         console.log(users);
     });
     socket.on('newPacket', function (packet) {
