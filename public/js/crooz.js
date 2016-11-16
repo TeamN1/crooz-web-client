@@ -6,7 +6,7 @@ function main() {
     mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
         socket.emit('subscribe', users.sort(function(a,b) { 
- -          return (new Date(b.lastActive)).getTime() - (new Date(a.lastActive)).getTime() 
+ -          return ((new Date(a.lastActive)).getTime() > (new Date(b.lastActive)).getTime()) ?  1: -1  
  -      }[0]));
         console.log(users);
     });
