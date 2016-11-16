@@ -16,7 +16,7 @@ Mapper.init = function(element, packetList) {
 }
 
 Mapper.render = function() {
-    console.log(this._packets);
+//     console.log(this._packets);
     this.drawPolyline(this._packets)
     for (var i = this.map.entities.getLength()-1; i >=0; i--) {
         var previousPin = this.map.entities.get(i);
@@ -24,7 +24,7 @@ Mapper.render = function() {
             this.map.entities.removeAt(i);
         }
     }
-    console.log(this.car);
+//     console.log(this.car);
     var pushPin = new Microsoft.Maps.Pushpin(
         new Microsoft.Maps.Location(this.car.geo.lat, this.car.geo.lon),
         null
@@ -34,7 +34,7 @@ Mapper.render = function() {
 
 Mapper.addPackets = function(packetList) {
     if (packetList.length) {
-        console.log(packetList);
+//         console.log(packetList);
         this._packets = this._packets.concat(packetList);
         this.car = this._packets[this._packets.length-1];
     }
