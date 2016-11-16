@@ -1,10 +1,3 @@
-<!--
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.0-alpha.2
- * @link http://coreui.io
- * Copyright (c) 2016 creativeLabs Łukasz Holeczek
- * @license MIT
- -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +27,6 @@
         </div>
     </header>
 
-    <!--<div class="sidebar">
-
-        <nav class="sidebar-nav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="icon-speedometer"></i> Dashboard <span class="tag tag-info">NEW</span></a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>-->
-
     <!-- Main content -->
     <main class="main">
         <div class="container-fluid">
@@ -61,7 +42,7 @@
                 <div class="col-sm-6 col-lg-9">
                     <div class="card card-inverse card-primary">
                         <div class="card-block p-b-0">
-                            <h2 class="m-b-0 card-title">current song</h2> <br/>
+                            <h2 class="m-b-0 card-title">song</h2> <br/>
                             <h1 id="songCard"></h1>
                         </div>
                     </div>
@@ -76,6 +57,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="card card-inverse card-primary">
+                        <div class="card-block p-b-0">
+                            <h2 class="m-b-0 card-title">speed</h2> <br/>
+                            <h1 id="speedCard"></h1>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -86,19 +75,14 @@
 
     <footer class="footer">
         <span class="text-left">
-            <a href="http://coreui.io">CoreUI</a> © 2016 creativeLabs.
+            <a href="http://www.crooz.io">crooz.io</a>
         </span>
         <span class="float-xs-right">
-            Powered by <a href="http://coreui.io">CoreUI</a>
+            Empowered by <a href="http://www.crooz.io">Team Crooz</a>
         </span>
     </footer>
 
-    <!-- Bootstrap and necessary plugins -->
-    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/tether/dist/js/tether.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
     <script src='//www.bing.com/api/maps/mapcontrol?branch=release&callback=main'></script>
-    <!--<script src="./js/pace.min.js"></script>-->
     <script src="//cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="./js/mapper.js"></script>
     <script src="./js/crooz.js"></script>
