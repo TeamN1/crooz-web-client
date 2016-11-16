@@ -38,6 +38,9 @@ router.post('/', function (req, res, next) {
     if (!error) {
       // result contains the ETag for the new entity
     }
+    else {
+      Console.log(error);
+    }
   });
 
   data.time = new Date();
