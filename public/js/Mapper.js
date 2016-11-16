@@ -45,6 +45,13 @@ Mapper.drawPolyline = function(packetList) {
     for (var packet of packetList) {
         locationList.push(new Microsoft.Maps.Location(packet.geo.lat, packet.geo.lon))
     }
+    
+    if (locationList.length) {
+        this.map.setView({
+            center: locationList[locationList.length-1],
+            zoom: 15
+        })
+    }
     if (!this._polyline) {
         this._polyline = new Microsoft.Maps.Polyline(locationList, null)
         this.map.entities.push(this._polyline);
