@@ -52,7 +52,7 @@ Mapper.drawPolyline = function(packetList) {
 //             zoom: 15
 //         });
         var rect = Microsoft.Maps.LocationRect.fromLocations(locationList);
-        this.map.setView({ bounds: rect, padding: 1000, zoom: 8 });
+        this.map.setView({ bounds: rect, padding: 250, zoom: 8 });
     }
     if (!this._polyline) {
         this._polyline = new Microsoft.Maps.Polyline(locationList, null);
