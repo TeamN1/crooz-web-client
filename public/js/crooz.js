@@ -5,9 +5,7 @@ function main() {
     socket = io();
     mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
-        socket.emit('subscribe', users.sort(function(a,b) { 
- -          return ((new Date(a.lastActive)).getTime() > (new Date(b.lastActive)).getTime()) ?  1: -1  
- -      }[0]));
+        socket.emit('subscribe', users.sort(compare((new Date(a.lastActive)).getTime(), (new Date(b.lastActive)).getTime())
         console.log(users);
     });
     socket.on('newPacket', function (packet) {
@@ -37,4 +35,14 @@ function main() {
             }
         );
     });
+}
+
+function compare(a,b) {
+    if (a > b) {
+        return 1;
+    } else if (a < b) {
+        return -1;
+    } else {
+        return 0;   
+    }
 }
