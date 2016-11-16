@@ -9,6 +9,7 @@ function main() {
         console.log(users);
     });
     socket.on('newPacket', function (packet) {
+        if(!packet) {return}
         console.log(packet);
         mapper.addPackets([packet]);
         console.log(mapper._packets);
@@ -23,6 +24,7 @@ function main() {
     });
     
     socket.on('newPackets', function (packets) {
+        if(!packets.length) {return}
         console.log(packets);
         mapper.addPackets(packets);
         console.log(mapper._packets);
