@@ -49,7 +49,7 @@ Mapper.drawPolyline = function(packetList) {
     if (locationList.length) {
         this.map.setView({
             center: locationList[locationList.length-1],
-            zoom: 12
+            zoom: 15
         });
 //         var rect = Microsoft.Maps.LocationRect.fromLocations(locationList);
 //         this.map.setView({ bounds: rect, padding: 250, zoom: 15 });
