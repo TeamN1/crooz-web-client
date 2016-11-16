@@ -23,7 +23,7 @@ function handlePackets(packets) {
 //  console.log(mapper._packets);
     mapper.render();
     var car = mapper.car;
-    document.getElementById('speedCard').innerText = car.speed*3.6 + " km/h";
+    document.getElementById('speedCard').innerText = (car.speed*3.6).toFixed(1) + " km/h";
     document.getElementById('songCard').innerText = car.song;
     document.getElementById('moodCard').innerText = Object.keys(car.mood).reduce(
         function(a, b) {
