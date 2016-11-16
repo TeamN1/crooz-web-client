@@ -6,6 +6,7 @@ function main() {
     mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
         socket.emit('subscribe', users[users.length-1]);
+        console.log(users);
     });
     socket.on('newPacket', function (packet) {
         console.log(packet);
