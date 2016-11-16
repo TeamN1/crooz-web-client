@@ -51,8 +51,8 @@ Mapper.drawPolyline = function(packetList) {
 //             center: locationList[locationList.length-1],
 //             zoom: 15
 //         });
-        var rect = Microsoft.Maps.LocationRect.fromLocations(locationList);
-        this.map.setView({ bounds: rect, padding: 250, zoom: 12 });
+//         var rect = Microsoft.Maps.LocationRect.fromLocations(locationList);
+//         this.map.setView({ bounds: rect, padding: 250, zoom: 15 });
     }
     if (!this._polyline) {
         this._polyline = new Microsoft.Maps.Polyline(locationList, null);
