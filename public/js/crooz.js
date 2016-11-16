@@ -5,7 +5,11 @@ function main() {
     socket = io();
     mapper = Mapper.init(document.getElementById('mapCard'));
     socket.on('connected', function (users) {
-        socket.emit('subscribe', users[users.length-1]);
+        socket.emit('subscribe', users
+            .sort(function(a,b) { 
+                return new Date(b.tripId).getTime() - new Date(a.tripId).getTime() 
+            }[0])
+        );
         console.log(users);
     });
     socket.on('newPacket', function (packet) {
