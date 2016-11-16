@@ -7,7 +7,7 @@ function main() {
     socket.on('connected', function (users) {
         socket.emit('subscribe', users
             .sort(function(a,b) { 
-                return new Date(b.currentMaps).getTime() - new Date(a.currentMaps).getTime() 
+                return new Date(b.currentSession).getTime() - new Date(a.currentSession).getTime() 
             }[0])
         );
         console.log(users);
