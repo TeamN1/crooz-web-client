@@ -2,7 +2,7 @@ var express = require('express');
 var azure = require('azure-storage');
 var router = express.Router();
 
-var tableService = azure.createTableService("croozdata", "NjwMoGKltY9rgfVhks/BdNpqtbslMo8HEnZeQVMmZEWd6/pEdG4UWG2yqw37NPQnWjyIb7AtD8ALrEK5Amx5vQ==");
+var tableService = azure.createTableService("croozdata", "mnTrwDt0ekS79B2l4iwTkr3bUcCldDaiV+UjNQHJZjYkVV3iYywdeVj6bS9mt8jYNLpPLL5wdSKGQGC3UlVUmA==");
 
 tableService.createTableIfNotExists('users', function(error, result, response) {
   if (!error) {
